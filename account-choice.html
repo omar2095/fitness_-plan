@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Fitness Program</title>
+    <title>Fitness Program - Account Options</title>
     <meta name="keywords" content="fitnessPlan, fitness, gym, calories" />
     <meta name="author" content="Omar Ahmed" />
     <link rel="icon" type="image/x-icon" href="assets/icon.png" />
@@ -33,15 +33,26 @@
     </div>
 
     <div class="container table-responsive">
-      <div class="section" style="text-align: center">
-        <h1 id="welcomeTitle">Fitness Program</h1>
-        <h3 id="welcomeSubtitle">
-          Welcome to your complete fitness and diet guide
-        </h3>
-        <p id="redirectText">Redirecting to account options...</p>
-        <button class="btn" onclick="redirect()" id="continueBtn">
-          Continue
-        </button>
+      <div class="container" id="accountChoiceContainer">
+        <div class="section">
+          <h2 id="accountChoiceTitle">Account Options</h2>
+          <div class="form-group">
+            <label id="accountQuestion"></label>
+            <div class="radio-group">
+              <button
+                class="btn"
+                id="hasAccountBtn"
+                onclick="goToLogin()"
+              ></button>
+              <button
+                class="btn"
+                id="noAccountBtn"
+                onclick="goToRegister()"
+              ></button>
+            </div>
+          </div>
+          <div id="message"></div>
+        </div>
       </div>
     </div>
 
@@ -57,12 +68,13 @@
 
     <script src="assets/main.js"></script>
     <script>
-      function redirect() {
-        window.location.href = "account-choice.html";
+      function goToLogin() {
+        window.location.href = "login.html";
       }
 
-      // Auto-redirect after 2 seconds
-      setTimeout(redirect, 2000);
+      function goToRegister() {
+        window.location.href = "register.html";
+      }
     </script>
   </body>
 </html>
